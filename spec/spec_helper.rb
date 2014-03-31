@@ -4,7 +4,10 @@ SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter[
   SimpleCov::Formatter::HTMLFormatter,
   Coveralls::SimpleCov::Formatter
 ]
-SimpleCov.start { add_filter "/spec/" }
+SimpleCov.start do
+  add_filter "/spec/"
+  add_filter "/vendor/"
+end
 
 require "lita-jobs"
 require "lita/rspec"
