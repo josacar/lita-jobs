@@ -5,15 +5,15 @@ describe Lita::Handlers::Jobs, lita_handler: true do
     instance_double(Twke::Job,
       :pid => 123,
       :command => 'shutdown',
-      :start_time => Time.parse('Thu Nov 29 14:33:20 GMT 2001')
+      :start_time => Time.parse('Thu Nov 29 14:33:20 UTC 2001')
     )
   end
   let(:finished_job1) do
     instance_double(Twke::Job,
       :pid => 3131,
       :command => 'last',
-      :start_time => Time.parse('Thu Jan 19 14:33:20 GMT 2013'),
-      :end_time => Time.parse('Thu Jan 19 15:33:20 GMT 2013')
+      :start_time => Time.parse('Thu Jan 19 14:33:20 UTC 2013'),
+      :end_time => Time.parse('Thu Jan 19 15:33:20 UTC 2013')
     )
   end
   let(:job) { instance_double(Twke::Job) }
@@ -52,13 +52,13 @@ describe Lita::Handlers::Jobs, lita_handler: true do
     it 'returns active jobs list for running jobs' do
       allow(::Twke::JobManager).to receive(:list).and_return(active_jobs)
       send_command('jobs list')
-      expect(replies.last).to eq("> Active Jobs:\n   ID: 123 Cmd: 'shutdown' Started: 2001-11-29 15:33:20 +0100\n\n")
+      expect(replies.last).to eq("> Active Jobs:\n   ID: 123 Cmd: 'shutdown' Started: 2001-11-29 14:33:20 UTC\n\n")
     end
 
     it 'returns finished jobs list for finished jobs' do
       allow(::Twke::JobManager).to receive(:list).and_return(finished_jobs)
       send_command('jobs list')
-      expect(replies.last).to eq("> Finished Jobs:\n   ID: 3131 Cmd: 'last' Started: 2013-01-19 15:33:20 +0100, Finished: 2013-01-19 16:33:20 +0100\n")
+      expect(replies.last).to eq("> Finished Jobs:\n   ID: 3131 Cmd: 'last' Started: 2013-01-19 14:33:20 UTC, Finished: 2013-01-19 15:33:20 UTC\n")
     end
   end
 
