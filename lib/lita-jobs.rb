@@ -5,3 +5,5 @@ Lita.load_locales Dir[File.expand_path(
 )]
 
 require "lita/handlers/jobs"
+require 'job'
+require 'job_manager'
