@@ -2,3 +2,8 @@ en:
   lita:
     handlers:
       jobs:
+        help:
+          job_list: List active and finished jobs
+          job_kill: Kill an active job
+          job_tail: List last output for a job
+          job_output: List output for a job

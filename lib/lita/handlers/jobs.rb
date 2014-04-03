@@ -2,13 +2,13 @@ module Lita
   module Handlers
     class Jobs < Handler
       route /^jobs\slist$/, :job_list,
-        :help => { 'jobs list' => 'List active and finished jobs' }
+        :help => { 'jobs list' => t('help.job_list') }
       route /^jobs\skill\s(\d+)$/, :job_kill,
-        :help => { 'jobs kill JOB_ID' => 'Kill an active job' }
+        :help => { 'jobs kill JOB_ID' => t('help.job_kill') }
       route /^jobs\stail\s(\d+)$/, :job_tail,
-        :help => { 'jobs tail JOB_ID' => 'List last output for a job' }
+        :help => { 'jobs tail JOB_ID' => t('help.job_tail') }
       route /^jobs\sout(?:put)?\s(\d+)$/, :job_output,
-        :help => { 'jobs out JOB_ID' => 'List output for a job' }
+        :help => { 'jobs out JOB_ID' => t('help.job_output') }
 
       def job_list(response)
         jobs = ::Twke::JobManager.list
