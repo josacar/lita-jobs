@@ -13,7 +13,7 @@ module Lita
       def job_list(response)
         jobs = ::Twke::JobManager.list
         if jobs[:active].length == 0 && jobs[:finished].length == 0
-          response.reply("No active or finished jobs.")
+          response.reply(t('job_list.no_job'))
         else
           str = ''
           str << active_jobs(jobs[:active]) << finished_jobs(jobs[:finished])
@@ -45,9 +45,9 @@ module Lita
       def active_jobs(jobs)
         "".tap do |str|
           if jobs.length > 0
-            str << "> Active Jobs:\n"
+            str << "> #{t('job_list.active_jobs')}:\n"
             jobs.each do |job|
-              str << "   ID: %d Cmd: '%s' Started: %s\n" %
+              str << "   ID: %d Cmd: '%s' #{t('job_list.started')}: %s\n" %
                 [job.pid, job.command, job.start_time.to_s]
             end
             str << "\n"
@@ -58,9 +58,9 @@ module Lita
       def finished_jobs(jobs)
         "".tap do |str|
           if jobs.length > 0
-            str << "> Finished Jobs:\n"
+            str << "> #{t('job_list.finished_jobs')}:\n"
             jobs.each do |job|
-              str << "   ID: %d Cmd: '%s' Started: %s, Finished: %s\n" %
+              str << "   ID: %d Cmd: '%s' #{t('job_list.started')}: %s, #{t('job_list.finished')}: %s\n" %
                 [job.pid, job.command, job.start_time.to_s, job.end_time.to_s]
             end
           end
@@ -77,7 +77,7 @@ module Lita
         if job
           yield(job)
         else
-          response.reply("No such job: #{job_id}")
+          response.reply(t('in_job.no_job', job_id: job_id))
         end
       end
     end

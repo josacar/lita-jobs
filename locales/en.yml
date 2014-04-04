@@ -7,3 +7,11 @@ en:
           job_kill: Kill an active job
           job_tail: List last output for a job
           job_output: List output for a job
+        job_list:
+          no_job: No active or finished jobs.
+          active_jobs: Active Jobs
+          started: Started
+          finished_jobs: Finished Jobs
+          finished: Finished
+        in_job:
+          no_job: "No such job: %{job_id}"
