@@ -1,6 +1,6 @@
 # lita-jobs
 
-Control jobs from yaml gem.
+Control jobs from yajm gem.
 
 [![Gem Version](https://badge.fury.io/rb/lita-jobs.png)](http://badge.fury.io/rb/lita-jobs)
 [![Build Status](https://secure.travis-ci.org/josacar/lita-jobs.png)](http://travis-ci.org/josacar/lita-jobs)
