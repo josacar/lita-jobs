@@ -1,6 +1,6 @@
 Gem::Specification.new do |spec|
   spec.name          = 'lita-jobs'
-  spec.version       = '0.0.1'
+  spec.version       = '0.0.2'
   spec.authors       = ['Jose Luis Salas']
   spec.email         = ['josacar@gmail.com']
   spec.description   = %q{Run jobs in lita}
@@ -16,7 +16,6 @@ Gem::Specification.new do |spec|
 
   spec.add_runtime_dependency 'lita', '>= 3.0'
   spec.add_runtime_dependency 'yajm'
-  spec.add_runtime_dependency 'eventmachine'
 
   spec.add_development_dependency 'bundler', '~> 1.3'
   spec.add_development_dependency 'rspec', '>= 3.0.0.beta2'
