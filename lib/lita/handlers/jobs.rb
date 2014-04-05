@@ -1,3 +1,5 @@
+require 'yajm/job_manager'
+
 module Lita
   module Handlers
     class Jobs < Handler
@@ -11,7 +13,7 @@ module Lita
         :help => { 'jobs out JOB_ID' => t('help.job_output') }
 
       def job_list(response)
-        jobs = ::Twke::JobManager.list
+        jobs = ::Yajm::JobManager.list
         if jobs[:active].length == 0 && jobs[:finished].length == 0
           response.reply(t('job_list.no_job'))
         else
@@ -68,7 +70,7 @@ module Lita
       end
 
       def retrieve_job(job_id)
-        Twke::JobManager.getjob(job_id)
+        Yajm::JobManager.getjob(job_id)
       end
 
       def in_job(response)

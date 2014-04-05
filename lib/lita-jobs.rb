@@ -1,9 +1,7 @@
-require "lita"
+require 'lita'
 
 Lita.load_locales Dir[File.expand_path(
-  File.join("..", "..", "locales", "*.yml"), __FILE__
+  File.join('..', '..', 'locales', '*.yml'), __FILE__
 )]
 
-require "lita/handlers/jobs"
-require 'job'
-require 'job_manager'
+require 'lita/handlers/jobs'
