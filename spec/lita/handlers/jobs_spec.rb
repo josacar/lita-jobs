@@ -36,7 +36,7 @@ describe Lita::Handlers::Jobs, lita_handler: true do
 
   shared_examples_for 'prints error message when job not found' do
     it 'returns error message when not found' do
-      allow(Yajm::JobManager).to receive(:getjob).with('1123')
+      allow(Yajm::JobManager).to receive(:getjob).with(1123)
       send_command('jobs tail 1123')
       expect(replies.last).to eq('No such job: 1123')
     end
@@ -64,7 +64,7 @@ describe Lita::Handlers::Jobs, lita_handler: true do
 
   describe '#job_kill' do
     it 'kills a jobs when found' do
-      allow(Yajm::JobManager).to receive(:getjob).with('1123').and_return(job)
+      allow(Yajm::JobManager).to receive(:getjob).with(1123).and_return(job)
       expect(job).to receive(:kill!)
       send_command('jobs kill 1123')
     end
@@ -75,7 +75,7 @@ describe Lita::Handlers::Jobs, lita_handler: true do
   describe '#job_tail' do
     it 'gets last output from a job when found' do
       output = 'Hello world!'
-      allow(Yajm::JobManager).to receive(:getjob).with('1123').and_return(job)
+      allow(Yajm::JobManager).to receive(:getjob).with(1123).and_return(job)
       allow(job).to receive(:output_tail).and_return(output)
       send_command('jobs tail 1123')
       expect(replies.last).to eq(output)
@@ -87,7 +87,7 @@ describe Lita::Handlers::Jobs, lita_handler: true do
   describe '#job_output' do
     it 'gets output from a job when found' do
       output = "I'm Muzzy big Muzzy"
-      allow(Yajm::JobManager).to receive(:getjob).with('1123').and_return(job)
+      allow(Yajm::JobManager).to receive(:getjob).with(1123).and_return(job)
       allow(job).to receive(:output).and_return(output)
       send_command('jobs output 1123')
       expect(replies.last).to eq(output)

@@ -70,7 +70,7 @@ module Lita
       end
 
       def retrieve_job(job_id)
-        Yajm::JobManager.getjob(job_id)
+        Yajm::JobManager.getjob(job_id.to_i)
       end
 
       def in_job(response)
