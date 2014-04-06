@@ -1,6 +1,6 @@
 Gem::Specification.new do |spec|
   spec.name          = 'lita-jobs'
-  spec.version       = '0.0.2'
+  spec.version       = '0.0.3'
   spec.authors       = ['Jose Luis Salas']
   spec.email         = ['josacar@gmail.com']
   spec.description   = %q{Run jobs in lita}
