@@ -7,6 +7,7 @@ Control jobs from yajm gem.
 [![Coverage Status](https://coveralls.io/repos/josacar/lita-jobs/badge.png)](https://coveralls.io/r/josacar/lita-jobs)
 [![Code Climate](https://codeclimate.com/github/josacar/lita-jobs.png)](https://codeclimate.com/github/josacar/lita-jobs)
 [![Dependency Status](https://gemnasium.com/josacar/lita-jobs.png)](https://gemnasium.com/josacar/lita-jobs)
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fjosacar%2Flita-jobs.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2Fjosacar%2Flita-jobs?ref=badge_shield)
 
 ## Installation
 
@@ -28,3 +29,6 @@ lita jobs output JOB_ID - Print output for a job
 ## License
 
 [MIT](http://opensource.org/licenses/MIT)
+
+
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fjosacar%2Flita-jobs.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2Fjosacar%2Flita-jobs?ref=badge_large)
